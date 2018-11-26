@@ -22,7 +22,7 @@ RUN  rm -rf /go/pkg /go/src /usr/local/go && apk del .build-deps
 
 
 
-FROM alpine:3.7 
+FROM arm64v8/alpine:3.7 
 
 COPY --from=builder /go/bin/minio /usr/bin/minio
 ADD https://raw.githubusercontent.com/minio/minio/master/dockerscripts/docker-entrypoint.sh https://raw.githubusercontent.com/minio/minio/master/dockerscripts/healthcheck.sh /usr/bin/
